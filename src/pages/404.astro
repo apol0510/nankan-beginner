@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="ページが見つかりません" description="お探しのページが見つかりません。">
+  <div class="container mx-auto px-4 py-16 text-center">
+    <div class="max-w-lg mx-auto">
+      <h1 class="text-6xl font-bold text-gray-300 mb-4">404</h1>
+      <h2 class="text-2xl font-bold mb-4">ページが見つかりません</h2>
+      <p class="text-gray-600 mb-8">
+        お探しのページは存在しないか、移動された可能性があります。
+      </p>
+      
+      <div class="space-y-4">
+        <a href="/" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-md transition-colors">
+          トップページへ戻る
+        </a>
+        
+        <div class="mt-8">
+          <h3 class="text-lg font-bold mb-4">人気のページ</h3>
+          <div class="grid gap-2">
+            <a href="/about" class="block text-green-600 hover:text-green-800">南関競馬とは</a>
+            <a href="/how-to-bet" class="block text-green-600 hover:text-green-800">馬券の買い方</a>
+            <a href="/prediction-basics" class="block text-green-600 hover:text-green-800">予想の基本</a>
+            <a href="/enjoyment" class="block text-green-600 hover:text-green-800">楽しみ方</a>
+            <a href="/glossary" class="block text-green-600 hover:text-green-800">用語集</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
