@@ -47,18 +47,32 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <nav class="container mx-auto px-4 py-4">
         <div class="flex items-center justify-between">
           <a href="/" class="text-2xl font-bold text-green-700">南関競馬入門ナビ</a>
-          <ul class="hidden md:flex space-x-6">
-            <li><a href="/about" class="hover:text-green-700 transition-colors">南関競馬とは</a></li>
-            <li><a href="/how-to-bet" class="hover:text-green-700 transition-colors">馬券の買い方</a></li>
-            <li><a href="/prediction-basics" class="hover:text-green-700 transition-colors">予想の基本</a></li>
-            <li><a href="/enjoyment" class="hover:text-green-700 transition-colors">楽しみ方</a></li>
-            <li><a href="/glossary" class="hover:text-green-700 transition-colors">用語集</a></li>
-          </ul>
-          <button class="md:hidden">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
+          
+          <div class="hidden md:flex items-center space-x-6">
+            <ul class="flex space-x-6">
+              <li><a href="/about" class="hover:text-green-700 transition-colors">南関競馬とは</a></li>
+              <li><a href="/how-to-bet" class="hover:text-green-700 transition-colors">馬券の買い方</a></li>
+              <li><a href="/prediction-basics" class="hover:text-green-700 transition-colors">予想の基本</a></li>
+              <li><a href="/enjoyment" class="hover:text-green-700 transition-colors">楽しみ方</a></li>
+              <li><a href="/glossary" class="hover:text-green-700 transition-colors">用語集</a></li>
+            </ul>
+            <a href="https://apolon.keibanahibi.com/index.php?nankanyosou" 
+               class="bg-yellow-400 text-black font-bold py-2 px-4 rounded-lg text-sm hover:bg-yellow-300 transition-colors duration-200 whitespace-nowrap">
+              無料予想
+            </a>
+          </div>
+          
+          <div class="md:hidden flex items-center space-x-3">
+            <a href="https://apolon.keibanahibi.com/index.php?nankanyosou" 
+               class="bg-yellow-400 text-black font-bold py-1 px-3 rounded text-sm hover:bg-yellow-300 transition-colors duration-200">
+              無料予想
+            </a>
+            <button class="hamburger-menu">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
         </div>
       </nav>
     </header>
