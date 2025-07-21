@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nankan-beginner.netlify.app/sitemap.xml
+Sitemap: https://nankan-beginner.keiba.link/sitemap.xml

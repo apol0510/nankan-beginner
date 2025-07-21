@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import GoogleVerificationMeta from '../components/GoogleVerificationMeta.astro';
 
 export interface Props {
   title: string;
@@ -37,6 +38,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     
     <link rel="canonical" href={canonicalURL} />
     <title>{title} - 南関競馬入門ナビ</title>
+    
+    <!-- Google Search Console & Analytics -->
+    <GoogleVerificationMeta />
   </head>
   <body class="bg-gray-50 text-gray-900">
     <header class="bg-white shadow-sm sticky top-0 z-50">

@@ -1,0 +1,38 @@
+---
+// Google Search Console用のメタタグコンポーネント
+// 実際のverification contentは後でGoogleサーチコンソールから取得して設定
+---
+
+<!-- Google Search Console Verification -->
+<!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" /> -->
+
+<!-- Google Analytics (推奨) -->
+<!-- 
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script>
+-->
+
+<!-- 構造化データ用のJSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "南関競馬入門ナビ",
+  "description": "南関競馬をゼロから始める完全ガイド。初心者でも安心して楽しめる南関競馬の魅力と予想方法を徹底解説。",
+  "url": "https://nankan-beginner.keiba.link",
+  "publisher": {
+    "@type": "Organization",
+    "name": "南関競馬入門ナビ"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://nankan-beginner.keiba.link/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
