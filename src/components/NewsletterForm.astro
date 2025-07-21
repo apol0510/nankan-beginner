@@ -1,0 +1,64 @@
+---
+export interface Props {
+  formName: string;
+  title?: string;
+  description?: string;
+  buttonText?: string;
+  className?: string;
+}
+
+const { 
+  formName, 
+  title = "無料メルマガ登録", 
+  description = "南関競馬攻略の無料情報をお届け",
+  buttonText = "今すぐ無料登録",
+  className = ""
+} = Astro.props;
+---
+
+<div class={`bg-green-50 border-2 border-green-200 rounded-lg p-6 ${className}`}>
+  <h3 class="text-xl font-bold text-green-800 mb-2">{title}</h3>
+  <p class="text-gray-700 mb-4">{description}</p>
+  
+  <form data-netlify="true" name={formName} method="POST" class="space-y-4">
+    <input type="hidden" name="form-name" value={formName} />
+    <div>
+      <label for={`email-${formName}`} class="block text-sm font-medium text-gray-700 mb-1">
+        メールアドレス
+      </label>
+      <input 
+        type="email" 
+        id={`email-${formName}`}
+        name="email" 
+        required
+        placeholder="your-email@example.com"
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+      />
+    </div>
+    
+    <button 
+      type="submit"
+      class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-md transition-colors duration-200"
+    >
+      {buttonText}
+    </button>
+  </form>
+  
+  <div class="mt-4 space-y-2">
+    <p class="text-sm text-gray-600 font-semibold">登録特典：</p>
+    <ul class="text-sm text-gray-600 space-y-1">
+      <li class="flex items-start">
+        <span class="text-green-600 mr-2">✓</span>
+        南関競馬予想チェックシート（PDF）
+      </li>
+      <li class="flex items-start">
+        <span class="text-green-600 mr-2">✓</span>
+        初心者が避けるべき5つの失敗パターン
+      </li>
+      <li class="flex items-start">
+        <span class="text-green-600 mr-2">✓</span>
+        有料予想の一部を無料配信
+      </li>
+    </ul>
+  </div>
+</div>

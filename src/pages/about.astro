@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+---
+
+<Layout title="南関競馬とは" description="南関競馬の基本情報から中央競馬との違い、4つの競馬場の特徴まで初心者向けに解説します。">
+  <div class="container mx-auto px-4 py-8">
+    <!-- パンくずリスト -->
+    <nav class="text-sm mb-8">
+      <ol class="flex items-center space-x-2">
+        <li><a href="/" class="text-green-600 hover:text-green-800">ホーム</a></li>
+        <li class="text-gray-400">/</li>
+        <li class="text-gray-600">南関競馬とは</li>
+      </ol>
+    </nav>
+
+    <article class="max-w-4xl mx-auto">
+      <h1 class="text-3xl md:text-4xl font-bold mb-8">南関競馬とは</h1>
+      
+      <!-- 基本説明 -->
+      <section class="prose prose-lg max-w-none mb-12">
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          南関競馬（なんかんけいば）とは、東京都・千葉県・埼玉県にある4つの地方競馬場で開催される競馬の総称です。
+          「南関東4競馬場」の略称で、大井競馬場、川崎競馬場、船橋競馬場、浦和競馬場の4場で構成されています。
+        </p>
+        
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+          <h3 class="font-bold text-lg mb-2">南関競馬の特徴</h3>
+          <ul class="space-y-2">
+            <li>✓ ほぼ毎日どこかで開催されている</li>
+            <li>✓ ナイター競馬が中心（平日の夜でも楽しめる）</li>
+            <li>✓ 中央競馬よりも出走頭数が少なく予想しやすい</li>
+            <li>✓ ネット投票で全国どこからでも参加可能</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 中央競馬との違い -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">中央競馬との違い</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse bg-white shadow-sm">
+            <thead>
+              <tr class="bg-gray-50">
+                <th class="border p-4 text-left">項目</th>
+                <th class="border p-4 text-left">南関競馬</th>
+                <th class="border p-4 text-left">中央競馬（JRA）</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border p-4 font-semibold">開催日</td>
+                <td class="border p-4">平日中心（月〜金）</td>
+                <td class="border p-4">土日中心</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border p-4 font-semibold">開催時間</td>
+                <td class="border p-4">主にナイター（15:00〜20:30頃）</td>
+                <td class="border p-4">主に昼間（10:00〜16:30頃）</td>
+              </tr>
+              <tr>
+                <td class="border p-4 font-semibold">出走頭数</td>
+                <td class="border p-4">10〜14頭程度</td>
+                <td class="border p-4">最大18頭</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border p-4 font-semibold">馬券の種類</td>
+                <td class="border p-4">基本的に同じ</td>
+                <td class="border p-4">WIN5などJRA独自の馬券あり</td>
+              </tr>
+              <tr>
+                <td class="border p-4 font-semibold">最低購入金額</td>
+                <td class="border p-4">100円から</td>
+                <td class="border p-4">100円から</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 4つの競馬場紹介 -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">4つの競馬場紹介</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold mb-3 text-red-600">大井競馬場（東京都）</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li>• 愛称：トゥインクルレース（TCK）</li>
+              <li>• 南関最大の競馬場</li>
+              <li>• 東京大賞典など重賞レース多数</li>
+              <li>• アクセス：東京モノレール大井競馬場前駅</li>
+            </ul>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold mb-3 text-blue-600">川崎競馬場（神奈川県）</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li>• 愛称：スパーキングレース</li>
+              <li>• 全国唯一の全レースナイター開催</li>
+              <li>• 川崎記念などの重賞レース</li>
+              <li>• アクセス：京急川崎駅からバス</li>
+            </ul>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold mb-3 text-green-600">船橋競馬場（千葉県）</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li>• 愛称：ハートビートナイター</li>
+              <li>• 日本一の短距離直線（308m）</li>
+              <li>• かしわ記念などの重賞レース</li>
+              <li>• アクセス：京成船橋競馬場駅</li>
+            </ul>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold mb-3 text-purple-600">浦和競馬場（埼玉県）</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li>• 南関で唯一の昼間開催中心</li>
+              <li>• 浦和記念などの重賞レース</li>
+              <li>• コンパクトで見やすい競馬場</li>
+              <li>• アクセス：JR浦和駅からバス</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 開催スケジュール -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">開催スケジュール</h2>
+        <div class="bg-yellow-50 border rounded-lg p-6">
+          <p class="mb-4">
+            南関競馬は月曜から金曜まで、4場のいずれかで開催されています。
+            基本的に1日1場開催で、年間を通じてほぼ毎日楽しむことができます。
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-bold mb-2">開催時間の目安</h4>
+              <ul class="space-y-1 text-sm">
+                <li>• 第1レース：15:30頃〜</li>
+                <li>• メインレース：19:00頃</li>
+                <li>• 最終レース：20:30頃</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold mb-2">年間重賞スケジュール</h4>
+              <ul class="space-y-1 text-sm">
+                <li>• 1月：川崎記念（川崎）</li>
+                <li>• 6月：帝王賞（大井）</li>
+                <li>• 11月：浦和記念（浦和）</li>
+                <li>• 12月：東京大賞典（大井）</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="my-12">
+        <NewsletterForm 
+          formName="about-page-newsletter"
+          title="次のステップを学びたい方はメルマガ登録"
+          description="南関競馬の基礎から実践的な予想方法まで、段階的に学べる無料メール講座"
+        />
+      </div>
+
+      <!-- 次のステップ -->
+      <section class="bg-gray-100 rounded-lg p-8">
+        <h2 class="text-2xl font-bold mb-4">次に読むべき記事</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <a href="/how-to-bet" class="flex items-center justify-between bg-white p-4 rounded hover:shadow-md transition-shadow">
+            <span class="font-semibold">馬券の買い方</span>
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a href="/prediction-basics" class="flex items-center justify-between bg-white p-4 rounded hover:shadow-md transition-shadow">
+            <span class="font-semibold">予想の基本</span>
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </section>
+    </article>
+  </div>
+</Layout>

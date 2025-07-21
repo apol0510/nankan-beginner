@@ -1,0 +1,236 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+---
+
+<Layout title="馬券の買い方" description="南関競馬の馬券の種類から購入方法、初心者におすすめの買い方まで分かりやすく解説します。">
+  <div class="container mx-auto px-4 py-8">
+    <!-- パンくずリスト -->
+    <nav class="text-sm mb-8">
+      <ol class="flex items-center space-x-2">
+        <li><a href="/" class="text-green-600 hover:text-green-800">ホーム</a></li>
+        <li class="text-gray-400">/</li>
+        <li class="text-gray-600">馬券の買い方</li>
+      </ol>
+    </nav>
+
+    <article class="max-w-4xl mx-auto">
+      <h1 class="text-3xl md:text-4xl font-bold mb-8">馬券の買い方</h1>
+      
+      <!-- 導入部分 -->
+      <section class="prose prose-lg max-w-none mb-12">
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          南関競馬の馬券は、インターネット投票で全国どこからでも購入できます。
+          初心者の方でも簡単に始められるよう、馬券の種類から購入方法まで詳しく解説します。
+        </p>
+      </section>
+
+      <!-- 馬券の種類 -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">馬券の種類と説明</h2>
+        
+        <div class="space-y-4">
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold mb-2 text-green-600">単勝（たんしょう）</h3>
+            <p class="text-gray-700 mb-2">1着になる馬を当てる、最もシンプルな馬券</p>
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-gray-600">的中難易度：★☆☆☆☆</span>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded">初心者おすすめ</span>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold mb-2 text-green-600">複勝（ふくしょう）</h3>
+            <p class="text-gray-700 mb-2">3着以内に入る馬を当てる馬券（7頭以下は2着以内）</p>
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-gray-600">的中難易度：★☆☆☆☆</span>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded">初心者おすすめ</span>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold mb-2 text-blue-600">馬連（うまれん）</h3>
+            <p class="text-gray-700 mb-2">1着と2着になる馬の組み合わせを当てる（順不同）</p>
+            <div class="text-sm text-gray-600">的中難易度：★★☆☆☆</div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold mb-2 text-blue-600">ワイド</h3>
+            <p class="text-gray-700 mb-2">3着以内に入る2頭の組み合わせを当てる（順不同）</p>
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-gray-600">的中難易度：★★☆☆☆</span>
+              <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">バランス型</span>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold mb-2 text-orange-600">馬単（うまたん）</h3>
+            <p class="text-gray-700 mb-2">1着と2着になる馬を順番通りに当てる</p>
+            <div class="text-sm text-gray-600">的中難易度：★★★☆☆</div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold mb-2 text-red-600">3連複（さんれんぷく）</h3>
+            <p class="text-gray-700 mb-2">1〜3着に入る3頭の組み合わせを当てる（順不同）</p>
+            <div class="text-sm text-gray-600">的中難易度：★★★★☆</div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold mb-2 text-red-600">3連単（さんれんたん）</h3>
+            <p class="text-gray-700 mb-2">1着、2着、3着になる馬を順番通りに当てる</p>
+            <div class="text-sm text-gray-600">的中難易度：★★★★★</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 買い方の手順 -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">ネット投票の始め方</h2>
+        
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-6">
+          <h3 class="font-bold text-lg mb-2">主な投票サイト</h3>
+          <ul class="space-y-2">
+            <li>• SPAT4（スパットフォー）- 南関競馬公式</li>
+            <li>• 楽天競馬 - ポイントが貯まる・使える</li>
+            <li>• オッズパーク - 地方競馬全般対応</li>
+          </ul>
+        </div>
+
+        <h3 class="text-xl font-bold mb-4">SPAT4での購入手順</h3>
+        <ol class="space-y-4">
+          <li class="flex">
+            <span class="flex-shrink-0 w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold mr-3">1</span>
+            <div>
+              <h4 class="font-bold">会員登録</h4>
+              <p class="text-gray-600">メールアドレスと必要事項を入力して無料登録</p>
+            </div>
+          </li>
+          <li class="flex">
+            <span class="flex-shrink-0 w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold mr-3">2</span>
+            <div>
+              <h4 class="font-bold">入金</h4>
+              <p class="text-gray-600">ネットバンキングやクレジットカードで入金</p>
+            </div>
+          </li>
+          <li class="flex">
+            <span class="flex-shrink-0 w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold mr-3">3</span>
+            <div>
+              <h4 class="font-bold">レース選択</h4>
+              <p class="text-gray-600">開催場・レース番号を選択</p>
+            </div>
+          </li>
+          <li class="flex">
+            <span class="flex-shrink-0 w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold mr-3">4</span>
+            <div>
+              <h4 class="font-bold">馬券選択</h4>
+              <p class="text-gray-600">馬券の種類と馬番号を選択</p>
+            </div>
+          </li>
+          <li class="flex">
+            <span class="flex-shrink-0 w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold mr-3">5</span>
+            <div>
+              <h4 class="font-bold">購入確定</h4>
+              <p class="text-gray-600">金額を入力して購入ボタンをクリック</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- 初心者におすすめの馬券 -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">初心者におすすめの買い方</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-green-50 rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-3">まずは単勝・複勝から</h3>
+            <p class="text-gray-700 mb-3">
+              最もシンプルで的中率が高い単勝・複勝から始めましょう。
+              特に複勝は3着以内に入れば的中なので、初心者でも当てやすいです。
+            </p>
+            <div class="bg-white rounded p-4">
+              <p class="font-semibold mb-2">購入例：</p>
+              <p class="text-sm">3番の馬の複勝を100円購入</p>
+              <p class="text-sm text-gray-600">→ 3番が3着以内なら的中！</p>
+            </div>
+          </div>
+
+          <div class="bg-blue-50 rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-3">慣れたらワイドに挑戦</h3>
+            <p class="text-gray-700 mb-3">
+              単複に慣れたら、次はワイドがおすすめ。
+              3着以内に入る2頭を選ぶので、的中のチャンスが3通りあります。
+            </p>
+            <div class="bg-white rounded p-4">
+              <p class="font-semibold mb-2">購入例：</p>
+              <p class="text-sm">3-5のワイドを100円購入</p>
+              <p class="text-sm text-gray-600">→ 3番と5番が両方3着以内なら的中！</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 予算の決め方 -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">予算の決め方</h2>
+        
+        <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6">
+          <h3 class="font-bold text-lg mb-3">初心者の予算設定ルール</h3>
+          <ol class="space-y-3">
+            <li>
+              <span class="font-semibold">1. 1日の上限を決める</span>
+              <p class="text-sm text-gray-600">最初は1,000円〜3,000円程度がおすすめ</p>
+            </li>
+            <li>
+              <span class="font-semibold">2. 1レースの上限を決める</span>
+              <p class="text-sm text-gray-600">1日の予算÷レース数で配分（例：1,000円÷10レース＝100円）</p>
+            </li>
+            <li>
+              <span class="font-semibold">3. 負けても生活に影響しない金額に</span>
+              <p class="text-sm text-gray-600">競馬はギャンブル。余裕資金で楽しみましょう</p>
+            </li>
+            <li>
+              <span class="font-semibold">4. 的中しても使い切る覚悟で</span>
+              <p class="text-sm text-gray-600">「今日は1,000円で遊ぶ」という気持ちが大切</p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="mt-6 p-6 bg-red-50 rounded-lg">
+          <h4 class="font-bold text-red-800 mb-2">⚠️ 注意：追い上げは厳禁！</h4>
+          <p class="text-gray-700">
+            負けを取り返そうと賭け金を増やすのは絶対にNG。
+            予算を守って、楽しく長く続けることが大切です。
+          </p>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="my-12">
+        <NewsletterForm 
+          formName="how-to-bet-newsletter"
+          title="もっと詳しい買い方のコツを知りたい方へ"
+          description="実践的な馬券の組み立て方や、プロが使う買い方のテクニックを無料メルマガで配信中"
+        />
+      </div>
+
+      <!-- 次のステップ -->
+      <section class="bg-gray-100 rounded-lg p-8">
+        <h2 class="text-2xl font-bold mb-4">次に読むべき記事</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <a href="/prediction-basics" class="flex items-center justify-between bg-white p-4 rounded hover:shadow-md transition-shadow">
+            <span class="font-semibold">予想の基本を学ぶ</span>
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a href="/glossary" class="flex items-center justify-between bg-white p-4 rounded hover:shadow-md transition-shadow">
+            <span class="font-semibold">競馬用語を調べる</span>
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </section>
+    </article>
+  </div>
+</Layout>

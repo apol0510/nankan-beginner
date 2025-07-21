@@ -1,0 +1,231 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+
+const glossaryTerms = [
+  { term: "あがり", reading: "アガリ", description: "レース終了後の最後の直線のこと。「上がり3ハロン」のように使う。" },
+  { term: "一番人気", reading: "イチバンニンキ", description: "オッズが最も低い（最も人気がある）馬のこと。" },
+  { term: "ウッドコース", reading: "ウッドコース", description: "競馬場内の馬場とは別に設けられた、調教（練習）用のコース。" },
+  { term: "オッズ", reading: "オッズ", description: "馬券の配当率のこと。数字が大きいほど人気がない。" },
+  { term: "枠順", reading: "ワクジュン", description: "スタート時のゲートの位置。内側から順に1枠、2枠と呼ぶ。" },
+  { term: "ギャロップ", reading: "ギャロップ", description: "馬の調教で一番速いスピード。練習での走り方の一つ。" },
+  { term: "クラシックレース", reading: "クラシックレース", description: "中央競馬と地方競馬の交流競走のこと。" },
+  { term: "コース取り", reading: "コースドリ", description: "レース中に馬がどの位置を走るか。内・中・外など。" },
+  { term: "サラブレッド", reading: "サラブレッド", description: "純血種の馬。競走馬のほとんどがサラブレッド。" },
+  { term: "斤量", reading: "キンリョウ", description: "馬が背負う重量。騎手の体重と装具を含む。" },
+  { term: "スパット4", reading: "スパットフォー", description: "南関競馬の公式ネット投票サイト。" },
+  { term: "ぜん", reading: "ゼン", description: "セン馬（去勢した牡馬）のこと。" },
+  { term: "ダート", reading: "ダート", description: "砂のコースのこと。南関競馬はすべてダートコース。" },
+  { term: "調教", reading: "チョウキョウ", description: "馬のトレーニングのこと。練習。" },
+  { term: "トモ", reading: "トモ", description: "レース中に他の馬に並ばれること。「トモを憩う」など。" },
+  { term: "ナイター", reading: "ナイター", description: "夜間に開催される競馬のこと。南関競馬の特徴。" },
+  { term: "ノミ屋", reading: "ノミヤ", description: "馬券を販売する場所や人のこと。" },
+  { term: "ハナ", reading: "ハナ", description: "各馬の鼻先の差のこと。「ハナ差」のように使う。" },
+  { term: "パドック", reading: "パドック", description: "レース前に馬を歩かせて状態を確認する場所。" },
+  { term: "パンク", reading: "パンク", description: "予想が外れること。「大パンク」は大きく外れること。" },
+  { term: "牝馬", reading: "ヒンバ", description: "メスの馬のこと。" },
+  { term: "フレゲ", reading: "フレゲ", description: "レース終了後に振る旗。着順確定を知らせる。" },
+  { term: "並び", reading: "ナラビ", description: "ゴール前の各馬の位置関係。" },
+  { term: "牝馬", reading: "ボバ", description: "オスの馬のこと。" },
+  { term: "マルチ", reading: "マルチ", description: "複数の組み合わせで馬券を買うこと。" },
+  { term: "見せムチ", reading: "ミセムチ", description: "他の馬を威嚇するために鷦を振るうこと。" },
+  { term: "ヤネ", reading: "ヤネ", description: "騎手のこと。ジョッキー。" },
+  { term: "ラチ", reading: "ラチ", description: "埒らが明かなこと。「この馬はラチ」など。" },
+  { term: "連対率", reading: "レンタイリツ", description: "3着以内に入る確率。複勝率とも言う。" },
+  { term: "ローカル", reading: "ローカル", description: "その競馬場所属の馬や騎手のこと。" }
+];
+---
+
+<Layout title="南関競馬用語集" description="南関競馬でよく使われる専門用語を50音順で解説。初心者でも分かりやすい用語辞典。">
+  <div class="container mx-auto px-4 py-8">
+    <!-- パンくずリスト -->
+    <nav class="text-sm mb-8">
+      <ol class="flex items-center space-x-2">
+        <li><a href="/" class="text-green-600 hover:text-green-800">ホーム</a></li>
+        <li class="text-gray-400">/</li>
+        <li class="text-gray-600">用語集</li>
+      </ol>
+    </nav>
+
+    <article class="max-w-4xl mx-auto">
+      <h1 class="text-3xl md:text-4xl font-bold mb-8">南関競馬用語集</h1>
+      
+      <!-- 導入部分 -->
+      <section class="prose prose-lg max-w-none mb-12">
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          競馬には独特の専門用語がたくさんあります。
+          ここでは南関競馬でよく使われる用語を50音順で解説します。
+          分からない言葉が出てきたら、このページで確認してみてください。
+        </p>
+      </section>
+
+      <!-- 検索ナビゲーション -->
+      <section class="mb-8">
+        <div class="bg-gray-100 rounded-lg p-4">
+          <h2 class="text-lg font-bold mb-3">索引から探す</h2>
+          <div class="flex flex-wrap gap-2">
+            <a href="#a" class="px-3 py-1 bg-white hover:bg-green-100 rounded transition-colors">あ行</a>
+            <a href="#ka" class="px-3 py-1 bg-white hover:bg-green-100 rounded transition-colors">か行</a>
+            <a href="#sa" class="px-3 py-1 bg-white hover:bg-green-100 rounded transition-colors">さ行</a>
+            <a href="#ta" class="px-3 py-1 bg-white hover:bg-green-100 rounded transition-colors">た行</a>
+            <a href="#na" class="px-3 py-1 bg-white hover:bg-green-100 rounded transition-colors">な行</a>
+            <a href="#ha" class="px-3 py-1 bg-white hover:bg-green-100 rounded transition-colors">は行</a>
+            <a href="#ma" class="px-3 py-1 bg-white hover:bg-green-100 rounded transition-colors">ま行</a>
+            <a href="#ya" class="px-3 py-1 bg-white hover:bg-green-100 rounded transition-colors">や行</a>
+            <a href="#ra" class="px-3 py-1 bg-white hover:bg-green-100 rounded transition-colors">ら行</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 用語一覧 -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">用語一覧</h2>
+        
+        <!-- あ行 -->
+        <div id="a" class="mb-8">
+          <h3 class="text-xl font-bold mb-4 text-green-600">あ行</h3>
+          <div class="space-y-4">
+            {glossaryTerms.filter(term => term.reading.match(/^[アイウエオ]/)).map(term => (
+              <div class="bg-white rounded-lg shadow-sm p-4">
+                <h4 class="font-bold text-lg mb-1">{term.term} <span class="text-sm text-gray-500 font-normal">({term.reading})</span></h4>
+                <p class="text-gray-700">{term.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- か行 -->
+        <div id="ka" class="mb-8">
+          <h3 class="text-xl font-bold mb-4 text-green-600">か行</h3>
+          <div class="space-y-4">
+            {glossaryTerms.filter(term => term.reading.match(/^[カキクケコガギグゲゴ]/)).map(term => (
+              <div class="bg-white rounded-lg shadow-sm p-4">
+                <h4 class="font-bold text-lg mb-1">{term.term} <span class="text-sm text-gray-500 font-normal">({term.reading})</span></h4>
+                <p class="text-gray-700">{term.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- さ行 -->
+        <div id="sa" class="mb-8">
+          <h3 class="text-xl font-bold mb-4 text-green-600">さ行</h3>
+          <div class="space-y-4">
+            {glossaryTerms.filter(term => term.reading.match(/^[サシスセソザジズゼゾ]/)).map(term => (
+              <div class="bg-white rounded-lg shadow-sm p-4">
+                <h4 class="font-bold text-lg mb-1">{term.term} <span class="text-sm text-gray-500 font-normal">({term.reading})</span></h4>
+                <p class="text-gray-700">{term.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- た行 -->
+        <div id="ta" class="mb-8">
+          <h3 class="text-xl font-bold mb-4 text-green-600">た行</h3>
+          <div class="space-y-4">
+            {glossaryTerms.filter(term => term.reading.match(/^[タチツテトダヂヅデド]/)).map(term => (
+              <div class="bg-white rounded-lg shadow-sm p-4">
+                <h4 class="font-bold text-lg mb-1">{term.term} <span class="text-sm text-gray-500 font-normal">({term.reading})</span></h4>
+                <p class="text-gray-700">{term.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- な行 -->
+        <div id="na" class="mb-8">
+          <h3 class="text-xl font-bold mb-4 text-green-600">な行</h3>
+          <div class="space-y-4">
+            {glossaryTerms.filter(term => term.reading.match(/^[ナニヌネノ]/)).map(term => (
+              <div class="bg-white rounded-lg shadow-sm p-4">
+                <h4 class="font-bold text-lg mb-1">{term.term} <span class="text-sm text-gray-500 font-normal">({term.reading})</span></h4>
+                <p class="text-gray-700">{term.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- は行 -->
+        <div id="ha" class="mb-8">
+          <h3 class="text-xl font-bold mb-4 text-green-600">は行</h3>
+          <div class="space-y-4">
+            {glossaryTerms.filter(term => term.reading.match(/^[ハヒフヘホバビブベボパピプペポ]/)).map(term => (
+              <div class="bg-white rounded-lg shadow-sm p-4">
+                <h4 class="font-bold text-lg mb-1">{term.term} <span class="text-sm text-gray-500 font-normal">({term.reading})</span></h4>
+                <p class="text-gray-700">{term.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- ま行 -->
+        <div id="ma" class="mb-8">
+          <h3 class="text-xl font-bold mb-4 text-green-600">ま行</h3>
+          <div class="space-y-4">
+            {glossaryTerms.filter(term => term.reading.match(/^[マミムメモ]/)).map(term => (
+              <div class="bg-white rounded-lg shadow-sm p-4">
+                <h4 class="font-bold text-lg mb-1">{term.term} <span class="text-sm text-gray-500 font-normal">({term.reading})</span></h4>
+                <p class="text-gray-700">{term.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- や行 -->
+        <div id="ya" class="mb-8">
+          <h3 class="text-xl font-bold mb-4 text-green-600">や行</h3>
+          <div class="space-y-4">
+            {glossaryTerms.filter(term => term.reading.match(/^[ヤユヨ]/)).map(term => (
+              <div class="bg-white rounded-lg shadow-sm p-4">
+                <h4 class="font-bold text-lg mb-1">{term.term} <span class="text-sm text-gray-500 font-normal">({term.reading})</span></h4>
+                <p class="text-gray-700">{term.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- ら行 -->
+        <div id="ra" class="mb-8">
+          <h3 class="text-xl font-bold mb-4 text-green-600">ら行</h3>
+          <div class="space-y-4">
+            {glossaryTerms.filter(term => term.reading.match(/^[ラリルレロ]/)).map(term => (
+              <div class="bg-white rounded-lg shadow-sm p-4">
+                <h4 class="font-bold text-lg mb-1">{term.term} <span class="text-sm text-gray-500 font-normal">({term.reading})</span></h4>
+                <p class="text-gray-700">{term.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="my-12">
+        <NewsletterForm 
+          formName="glossary-newsletter"
+          title="もっと深く学びたい方へ"
+          description="実践的な競馬知識や予想テクニックをメルマガで配信中。用語を覚えたら次のステップへ！"
+        />
+      </div>
+
+      <!-- 関連情報 -->
+      <section class="bg-gray-100 rounded-lg p-8">
+        <h2 class="text-2xl font-bold mb-4">関連情報</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <a href="/prediction-basics" class="flex items-center justify-between bg-white p-4 rounded hover:shadow-md transition-shadow">
+            <span class="font-semibold">予想の基本を学ぶ</span>
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a href="/how-to-bet" class="flex items-center justify-between bg-white p-4 rounded hover:shadow-md transition-shadow">
+            <span class="font-semibold">馬券の種類を確認</span>
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </section>
+    </article>
+  </div>
+</Layout>

@@ -1,16 +1,144 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import ExitIntentPopup from '../components/ExitIntentPopup.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="トップページ">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-green-600 to-green-800 text-white py-16 md:py-24">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-3xl md:text-5xl font-bold mb-6">
+        南関競馬をゼロから始める完全ガイド
+      </h1>
+      <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+        初心者でも安心！大井・川崎・船橋・浦和の地方競馬を楽しむための情報が満載
+      </p>
+      
+      <!-- ファーストビューCTA -->
+      <div class="max-w-md mx-auto">
+        <NewsletterForm 
+          formName="hero-newsletter"
+          title="南関競馬攻略の無料情報をお届け"
+          description="今なら登録者限定で特別レポートプレゼント！"
+          buttonText="無料で始める"
+          className="bg-white/10 backdrop-blur-sm border-white/20"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- 3つのポイント -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">南関競馬の魅力</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">毎日開催！ナイター競馬</h3>
+          <p class="text-gray-600">
+            仕事帰りでも楽しめるナイター開催。平日の夜も競馬を満喫できます。
+          </p>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">少額から楽しめる</h3>
+          <p class="text-gray-600">
+            100円から馬券が購入可能。初心者でも気軽に始められます。
+          </p>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">予想しやすい</h3>
+          <p class="text-gray-600">
+            出走頭数が少なく、初心者でも予想を立てやすいのが特徴です。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- コンテンツへの導線 -->
+  <section class="bg-gray-100 py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">初心者向けコンテンツ</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <a href="/about" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-6">
+          <h3 class="text-xl font-bold mb-3">南関競馬とは？</h3>
+          <p class="text-gray-600 mb-4">
+            南関競馬の基本から中央競馬との違いまで、わかりやすく解説します。
+          </p>
+          <span class="text-green-600 font-semibold">詳しく見る →</span>
+        </a>
+        
+        <a href="/how-to-bet" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-6">
+          <h3 class="text-xl font-bold mb-3">馬券の買い方</h3>
+          <p class="text-gray-600 mb-4">
+            ネット投票の方法から、初心者におすすめの馬券まで完全ガイド。
+          </p>
+          <span class="text-green-600 font-semibold">詳しく見る →</span>
+        </a>
+        
+        <a href="/prediction-basics" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-6">
+          <h3 class="text-xl font-bold mb-3">予想の基本</h3>
+          <p class="text-gray-600 mb-4">
+            出馬表の見方から予想のコツまで、勝率アップの秘訣を伝授。
+          </p>
+          <span class="text-green-600 font-semibold">詳しく見る →</span>
+        </a>
+        
+        <a href="/enjoyment" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-6">
+          <h3 class="text-xl font-bold mb-3">南関競馬の楽しみ方</h3>
+          <p class="text-gray-600 mb-4">
+            各競馬場の特色やイベント情報など、楽しみ方を紹介。
+          </p>
+          <span class="text-green-600 font-semibold">詳しく見る →</span>
+        </a>
+      </div>
+      
+      <!-- 記事途中のCTA -->
+      <div class="max-w-2xl mx-auto">
+        <NewsletterForm 
+          formName="content-newsletter"
+          title="続きはメルマガで詳しく解説"
+          description="実践的な予想テクニックや最新情報を無料でお届けします"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- もっと詳しく知りたい方へ -->
+  <section class="py-16">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">もっと詳しく知りたい方へ</h2>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        メルマガ登録で、より実践的な予想方法や有料級の情報を無料でお届けします。
+        今なら登録特典として「南関競馬予想チェックシート」をプレゼント！
+      </p>
+      
+      <div class="inline-flex items-center space-x-2 text-green-600 font-semibold">
+        <span>メルマガ読者限定特典あり</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <ExitIntentPopup />
+</Layout>

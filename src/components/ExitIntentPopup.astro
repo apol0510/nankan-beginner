@@ -1,0 +1,71 @@
+---
+---
+
+<div id="exit-intent-popup" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+  <div class="flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white rounded-lg max-w-md w-full p-8 relative">
+      <button 
+        id="close-popup"
+        class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">ちょっとお待ちください！</h2>
+      <p class="text-gray-600 mb-6">
+        南関競馬の予想で勝率を上げる秘訣を無料でお教えします。
+        今なら特別レポートを無料プレゼント中！
+      </p>
+      
+      <form data-netlify="true" name="exit-intent-newsletter" method="POST" class="space-y-4">
+        <input type="hidden" name="form-name" value="exit-intent-newsletter" />
+        <input 
+          type="email" 
+          name="email" 
+          required
+          placeholder="メールアドレスを入力"
+          class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500"
+        />
+        <button 
+          type="submit"
+          class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-md transition-colors"
+        >
+          無料で受け取る
+        </button>
+      </form>
+      
+      <p class="text-xs text-gray-500 mt-4 text-center">
+        いつでも配信解除可能です。プライバシーポリシーに基づき個人情報を管理します。
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  let hasShownPopup = false;
+  
+  // Exit intent detection
+  document.addEventListener('mouseout', (e) => {
+    if (!hasShownPopup && e.clientY <= 0 && e.relatedTarget === null) {
+      const popup = document.getElementById('exit-intent-popup');
+      if (popup) {
+        popup.classList.remove('hidden');
+        hasShownPopup = true;
+      }
+    }
+  });
+  
+  // Close popup
+  document.getElementById('close-popup')?.addEventListener('click', () => {
+    document.getElementById('exit-intent-popup')?.classList.add('hidden');
+  });
+  
+  // Close on background click
+  document.getElementById('exit-intent-popup')?.addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) {
+      e.currentTarget.classList.add('hidden');
+    }
+  });
+</script>

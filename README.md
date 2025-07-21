@@ -1,47 +1,75 @@
-# Astro Starter Kit: Minimal
+# 南関競馬入門ナビ
 
-```sh
-npm create astro@latest -- --template minimal
+南関競馬初心者のための入門サイト。大井・川崎・船橋・浦和の地方競馬を楽しむための情報を提供。
+
+## 🎯 サイトの目的
+
+- 南関競馬初心者への教育コンテンツ提供
+- 有料情報サービスへの導線強化（メルマガ登録）
+- 南関競馬ファンの裾野拡大
+
+## 🏇 主要コンテンツ
+
+- **南関競馬とは**: 基本情報と4つの競馬場紹介
+- **馬券の買い方**: ネット投票から予算設定まで
+- **予想の基本**: 出馬表の見方と予想のコツ
+- **楽しみ方**: ナイター競馬の魅力とイベント情報
+- **用語集**: 50音順の競馬用語辞典
+
+## 🎨 技術スタック
+
+- **フレームワーク**: Astro 5.x
+- **スタイリング**: Tailwind CSS 4.x
+- **デプロイ**: Netlify
+- **フォーム**: Netlify Forms
+
+## 🚀 開発・デプロイ
+
+### ローカル開発
+```bash
+npm install
+npm run dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+### ビルド
+```bash
+npm run build
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### プレビュー
+```bash
+npm run preview
+```
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 📈 メルマガ導線設計
 
-Any static assets, like images, can be placed in the `public/` directory.
+1. **ファーストビューCTA**: 大きな登録フォーム
+2. **記事途中**: コンテンツ内での訴求
+3. **Exit Intent**: 離脱時のポップアップ
+4. **フッター**: 常時表示の登録フォーム
 
-## 🧞 Commands
+### 登録特典
+- 南関競馬予想チェックシート（PDF）
+- 初心者が避けるべき5つの失敗パターン
+- 有料予想の一部を無料配信
 
-All commands are run from the root of the project, from a terminal:
+## 🎯 成果目標
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- **メルマガ登録率**: 5%以上
+- **開封率**: 30%以上
+- **有料版転換率**: 10%以上
 
-## 👀 Want to learn more?
+## 📱 レスポンシブ対応
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+すべてのページでスマートフォン・タブレット・デスクトップに対応。
+
+## 🔍 SEO対策
+
+- 適切なメタタグ設定
+- サイトマップ生成
+- OGP対応
+- 構造化データ
+
+## 📄 ライセンス
+
+All rights reserved - 南関競馬入門ナビ

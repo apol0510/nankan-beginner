@@ -1,0 +1,222 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+---
+
+<Layout title="予想の基本" description="南関競馬の出馬表の見方から予想のコツ、初心者が陥りやすい失敗パターンまで詳しく解説します。">
+  <div class="container mx-auto px-4 py-8">
+    <!-- パンくずリスト -->
+    <nav class="text-sm mb-8">
+      <ol class="flex items-center space-x-2">
+        <li><a href="/" class="text-green-600 hover:text-green-800">ホーム</a></li>
+        <li class="text-gray-400">/</li>
+        <li class="text-gray-600">予想の基本</li>
+      </ol>
+    </nav>
+
+    <article class="max-w-4xl mx-auto">
+      <h1 class="text-3xl md:text-4xl font-bold mb-8">予想の基本</h1>
+      
+      <!-- 導入部分 -->
+      <section class="prose prose-lg max-w-none mb-12">
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          競馬予想は難しそうに見えますが、基本的なポイントを押さえれば初心者でも楽しめます。
+          ここでは南関競馬の予想に必要な基礎知識を、わかりやすく解説します。
+        </p>
+      </section>
+
+      <!-- 出馬表の見方 -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">出馬表の見方</h2>
+        
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+          <h3 class="text-xl font-bold mb-4">出馬表で見るべき基本項目</h3>
+          
+          <div class="space-y-4">
+            <div class="border-l-4 border-green-500 pl-4">
+              <h4 class="font-bold">馬番・馬名</h4>
+              <p class="text-gray-600">レースに出走する馬の番号と名前。馬券購入時は馬番を使います。</p>
+            </div>
+            
+            <div class="border-l-4 border-blue-500 pl-4">
+              <h4 class="font-bold">騎手名・斤量</h4>
+              <p class="text-gray-600">騎手の名前と、馬が背負う重量（騎手の体重＋装具）。斤量が軽いほど有利。</p>
+            </div>
+            
+            <div class="border-l-4 border-yellow-500 pl-4">
+              <h4 class="font-bold">馬齢・性別</h4>
+              <p class="text-gray-600">馬の年齢と性別（牡馬・牝馬・セン馬）。一般的に4〜6歳が全盛期。</p>
+            </div>
+            
+            <div class="border-l-4 border-red-500 pl-4">
+              <h4 class="font-bold">過去の成績</h4>
+              <p class="text-gray-600">最近5走の着順。左が最新で、数字は着順を表します。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-lg p-6">
+          <h3 class="text-lg font-bold mb-3">成績の読み方例</h3>
+          <div class="font-mono text-lg mb-2">3-1-5-2-4</div>
+          <p class="text-sm text-gray-600">
+            最新から順に、3着→1着→5着→2着→4着という意味。
+            この馬は最近調子が上向きで、前走3着、前々走1着と好成績。
+          </p>
+        </div>
+      </section>
+
+      <!-- 注目すべきポイント5選 -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">予想で注目すべきポイント5選</h2>
+        
+        <div class="space-y-6">
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="flex items-start">
+              <span class="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold mr-4">1</span>
+              <div>
+                <h3 class="text-xl font-bold mb-2">近走成績</h3>
+                <p class="text-gray-700">最近3〜5走の成績をチェック。着順だけでなく、着差（どれくらい離されたか）も重要。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="flex items-start">
+              <span class="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold mr-4">2</span>
+              <div>
+                <h3 class="text-xl font-bold mb-2">コース適性</h3>
+                <p class="text-gray-700">同じ競馬場・距離での過去成績を確認。競馬場によって特徴が違うため、得意不得意があります。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="flex items-start">
+              <span class="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold mr-4">3</span>
+              <div>
+                <h3 class="text-xl font-bold mb-2">騎手の成績</h3>
+                <p class="text-gray-700">騎手の最近の調子や、その競馬場での成績をチェック。地元の主力騎手は要注目。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="flex items-start">
+              <span class="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold mr-4">4</span>
+              <div>
+                <h3 class="text-xl font-bold mb-2">休養明け</h3>
+                <p class="text-gray-700">前走から3ヶ月以上空いている馬は要注意。ただし、調教（練習）の動きが良ければ狙い目。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="flex items-start">
+              <span class="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold mr-4">5</span>
+              <div>
+                <h3 class="text-xl font-bold mb-2">枠順</h3>
+                <p class="text-gray-700">内枠（1〜4番）は最短距離を走れて有利。ただし、馬群に包まれるリスクも。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 初心者向け予想手順 -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">初心者向け予想手順</h2>
+        
+        <div class="bg-blue-50 rounded-lg p-8">
+          <ol class="space-y-6">
+            <li class="flex">
+              <span class="flex-shrink-0 text-3xl font-bold text-blue-600 mr-4">1</span>
+              <div>
+                <h3 class="font-bold mb-2">まず「軸馬」を1頭決める</h3>
+                <p class="text-gray-700">最近の成績が安定している馬を選びます。1〜3着を繰り返している馬が狙い目。</p>
+              </div>
+            </li>
+            
+            <li class="flex">
+              <span class="flex-shrink-0 text-3xl font-bold text-blue-600 mr-4">2</span>
+              <div>
+                <h3 class="font-bold mb-2">相手馬を2〜3頭選ぶ</h3>
+                <p class="text-gray-700">前走惜しかった馬、人気のない穴馬など、軸馬と組み合わせる馬を選びます。</p>
+              </div>
+            </li>
+            
+            <li class="flex">
+              <span class="flex-shrink-0 text-3xl font-bold text-blue-600 mr-4">3</span>
+              <div>
+                <h3 class="font-bold mb-2">馬券の種類を決める</h3>
+                <p class="text-gray-700">初心者は複勝かワイドがおすすめ。慣れてきたら馬連や3連複に挑戦。</p>
+              </div>
+            </li>
+            
+            <li class="flex">
+              <span class="flex-shrink-0 text-3xl font-bold text-blue-600 mr-4">4</span>
+              <div>
+                <h3 class="font-bold mb-2">購入金額を決めて購入</h3>
+                <p class="text-gray-700">1レース100〜500円程度から始めましょう。当たっても外れても冷静に。</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- よくある失敗パターン -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">初心者が陥りやすい失敗パターン</h2>
+        
+        <div class="space-y-4">
+          <div class="bg-red-50 border-l-4 border-red-500 p-6">
+            <h3 class="font-bold text-red-800 mb-2">❌ 人気馬ばかり買う</h3>
+            <p class="text-gray-700">オッズが低すぎて、当たっても利益が少ない。時には人気薄の馬も狙いましょう。</p>
+          </div>
+          
+          <div class="bg-red-50 border-l-4 border-red-500 p-6">
+            <h3 class="font-bold text-red-800 mb-2">❌ 全レース購入する</h3>
+            <p class="text-gray-700">自信のあるレースだけに絞ることが大切。見送る勇気も必要です。</p>
+          </div>
+          
+          <div class="bg-red-50 border-l-4 border-red-500 p-6">
+            <h3 class="font-bold text-red-800 mb-2">❌ 大穴ばかり狙う</h3>
+            <p class="text-gray-700">万馬券の夢は魅力的ですが、的中率が極端に低くなります。堅実な予想も大切。</p>
+          </div>
+          
+          <div class="bg-red-50 border-l-4 border-red-500 p-6">
+            <h3 class="font-bold text-red-800 mb-2">❌ 負けを取り返そうとする</h3>
+            <p class="text-gray-700">熱くなって賭け金を増やすのは危険。予算を守ることが長く楽しむコツです。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="my-12">
+        <NewsletterForm 
+          formName="prediction-basics-newsletter"
+          title="プロの予想術を無料で学ぶ"
+          description="回収率を上げる実践的なテクニックや、見逃しがちな予想ポイントをメルマガ限定で配信中"
+        />
+      </div>
+
+      <!-- 次のステップ -->
+      <section class="bg-gray-100 rounded-lg p-8">
+        <h2 class="text-2xl font-bold mb-4">次に読むべき記事</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <a href="/enjoyment" class="flex items-center justify-between bg-white p-4 rounded hover:shadow-md transition-shadow">
+            <span class="font-semibold">南関競馬の楽しみ方</span>
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a href="/glossary" class="flex items-center justify-between bg-white p-4 rounded hover:shadow-md transition-shadow">
+            <span class="font-semibold">用語集で詳しく学ぶ</span>
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </section>
+    </article>
+  </div>
+</Layout>

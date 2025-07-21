@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nankan-beginner.netlify.app/sitemap.xml

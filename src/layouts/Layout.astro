@@ -1,0 +1,100 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const { title, description = "南関競馬をゼロから始める完全ガイド。初心者でも安心して楽しめる南関競馬の魅力と予想方法を徹底解説。", ogImage = "/og-image.jpg" } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- OGP Tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={new URL(ogImage, Astro.url)} />
+    <meta property="og:site_name" content="南関競馬入門ナビ" />
+    <meta property="og:locale" content="ja_JP" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.url)} />
+    
+    <link rel="canonical" href={canonicalURL} />
+    <title>{title} - 南関競馬入門ナビ</title>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <nav class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <a href="/" class="text-2xl font-bold text-green-700">南関競馬入門ナビ</a>
+          <ul class="hidden md:flex space-x-6">
+            <li><a href="/about" class="hover:text-green-700 transition-colors">南関競馬とは</a></li>
+            <li><a href="/how-to-bet" class="hover:text-green-700 transition-colors">馬券の買い方</a></li>
+            <li><a href="/prediction-basics" class="hover:text-green-700 transition-colors">予想の基本</a></li>
+            <li><a href="/enjoyment" class="hover:text-green-700 transition-colors">楽しみ方</a></li>
+            <li><a href="/glossary" class="hover:text-green-700 transition-colors">用語集</a></li>
+          </ul>
+          <button class="md:hidden">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+    
+    <main>
+      <slot />
+    </main>
+    
+    <footer class="bg-gray-800 text-white mt-16">
+      <div class="container mx-auto px-4 py-8">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">南関競馬入門ナビ</h3>
+            <p class="text-gray-300">初心者でも安心して楽しめる南関競馬の情報サイト</p>
+          </div>
+          <div>
+            <h4 class="font-bold mb-3">コンテンツ</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li><a href="/about" class="hover:text-white">南関競馬とは</a></li>
+              <li><a href="/how-to-bet" class="hover:text-white">馬券の買い方</a></li>
+              <li><a href="/prediction-basics" class="hover:text-white">予想の基本</a></li>
+              <li><a href="/enjoyment" class="hover:text-white">楽しみ方</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-3">無料メルマガ登録</h4>
+            <p class="text-gray-300 mb-4">競馬予想の基礎から応用まで無料配信</p>
+            <form data-netlify="true" name="newsletter-footer" method="POST" class="flex">
+              <input type="email" name="email" placeholder="メールアドレス" required 
+                class="flex-1 px-3 py-2 text-gray-900 rounded-l focus:outline-none focus:ring-2 focus:ring-green-500" />
+              <button type="submit" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-r transition-colors">
+                登録
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+          <p>&copy; 2024 南関競馬入門ナビ. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
