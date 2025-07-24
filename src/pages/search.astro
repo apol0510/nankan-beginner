@@ -1,0 +1,151 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GoogleVerificationMeta from '../components/GoogleVerificationMeta.astro';
+
+const query = Astro.url.searchParams.get('q') || '';
+
+// サイト内のページデータ
+const pages = [
+  {
+    title: 'トップページ',
+    url: '/',
+    description: '南関競馬初心者のための総合ガイド',
+    content: '南関競馬 南関東競馬 初心者 ビギナー ガイド 始め方'
+  },
+  {
+    title: '南関競馬とは',
+    url: '/about',
+    description: '南関競馬の基本情報と魅力を詳しく解説',
+    content: '南関競馬とは 南関東競馬 大井競馬場 川崎競馬場 船橋競馬場 浦和競馬場 地方競馬 ナイター'
+  },
+  {
+    title: '馬券の購入方法',
+    url: '/how-to-bet',
+    description: '初心者でも分かる馬券の種類と買い方',
+    content: '馬券 購入方法 買い方 単勝 複勝 馬連 馬単 三連複 三連単 ワイド SPAT4 楽天競馬'
+  },
+  {
+    title: '予想の基本',
+    url: '/prediction-basics',
+    description: '競馬予想の基本的な考え方とコツ',
+    content: '予想 基本 パドック 血統 騎手 調教師 オッズ 人気 出走表'
+  },
+  {
+    title: '楽しみ方',
+    url: '/enjoyment',
+    description: '南関競馬をもっと楽しむためのポイント',
+    content: '楽しみ方 観戦 レース グルメ イベント 的中 配当'
+  },
+  {
+    title: '用語集',
+    url: '/glossary',
+    description: '競馬用語を分かりやすく解説',
+    content: '用語集 競馬用語 専門用語 南関東競馬 地方競馬'
+  }
+];
+
+// 検索処理
+let results = [];
+if (query) {
+  const searchQuery = query.toLowerCase();
+  results = pages.filter(page => {
+    const searchableText = `${page.title} ${page.description} ${page.content}`.toLowerCase();
+    return searchableText.includes(searchQuery);
+  });
+}
+---
+
+<Layout title={query ? `「${query}」の検索結果 - 南関競馬ビギナーガイド` : '検索 - 南関競馬ビギナーガイド'}>
+  <GoogleVerificationMeta />
+  
+  
+  <main class="min-h-screen bg-gradient-to-b from-green-50 to-white py-12 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">
+        {query ? `「${query}」の検索結果` : 'サイト内検索'}
+      </h1>
+
+      <!-- 検索フォーム -->
+      <div class="max-w-2xl mx-auto mb-12">
+        <form method="get" action="/search" class="flex gap-2">
+          <input
+            type="text"
+            name="q"
+            value={query}
+            placeholder="検索キーワードを入力"
+            class="flex-1 px-4 py-3 border-2 border-green-300 rounded-lg focus:outline-none focus:border-green-500 text-lg"
+            required
+          />
+          <button
+            type="submit"
+            class="px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            検索
+          </button>
+        </form>
+      </div>
+
+      <!-- 検索結果 -->
+      {query && (
+        <div class="max-w-4xl mx-auto">
+          {results.length > 0 ? (
+            <div>
+              <p class="text-gray-600 mb-6">{results.length}件の結果が見つかりました</p>
+              <div class="space-y-6">
+                {results.map((result) => (
+                  <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                    <h2 class="text-xl font-bold mb-2">
+                      <a href={result.url} class="text-green-600 hover:text-green-700 hover:underline">
+                        {result.title}
+                      </a>
+                    </h2>
+                    <p class="text-gray-600">{result.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div class="text-center">
+              <p class="text-gray-600 mb-8">「{query}」に一致する結果は見つかりませんでした。</p>
+              <div class="bg-gray-50 rounded-lg p-8">
+                <h2 class="text-xl font-bold mb-4">人気のページ</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                  {pages.map((page) => (
+                    <a
+                      href={page.url}
+                      class="block bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-left"
+                    >
+                      <h3 class="font-bold text-green-600 mb-1">{page.title}</h3>
+                      <p class="text-sm text-gray-600">{page.description}</p>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      <!-- 初回アクセス時（検索前） -->
+      {!query && (
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-gray-50 rounded-lg p-8">
+            <h2 class="text-xl font-bold mb-4">人気のページ</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+              {pages.map((page) => (
+                <a
+                  href={page.url}
+                  class="block bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-left"
+                >
+                  <h3 class="font-bold text-green-600 mb-1">{page.title}</h3>
+                  <p class="text-sm text-gray-600">{page.description}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  </main>
+
+</Layout>
