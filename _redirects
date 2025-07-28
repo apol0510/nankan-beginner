@@ -1,4 +1,3 @@
 # Netlify redirects file
 # Handle form submissions
 /thank-you /  200
-/*  /404.html  404

@@ -6,7 +6,8 @@ const pages = [
   '/how-to-bet',
   '/prediction-basics',
   '/enjoyment',
-  '/glossary'
+  '/glossary',
+  '/search'
 ];
 
 export const GET: APIRoute = () => {
